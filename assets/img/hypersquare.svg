@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <path id="hypersquare_svg" d="M568.153,17.167C549.523,14.879 530.77,13.732 512,13.732C257.695,13.732 51.232,220.195 51.232,474.5C51.232,728.805 257.695,935.268 512,935.268C766.305,935.268 972.768,728.805 972.768,474.5C972.768,390.89 950.017,308.855 906.955,237.187L897.599,242.809C939.641,312.779 961.853,392.87 961.853,474.5C961.853,722.78 760.28,924.353 512,924.353C263.72,924.353 62.147,722.78 62.147,474.5C62.147,226.22 263.72,24.647 512,24.647C530.326,24.647 548.634,25.767 566.823,28L568.153,17.167Z" style="fill:none;stroke:rgb(253,253,253);stroke-width:83.33px;"/>
+</svg>

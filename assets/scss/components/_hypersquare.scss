@@ -1,0 +1,77 @@
+@use './colors' as *;
+
+$radius: 12rem;
+
+.hypersquare {
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    border-radius: $radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $error;
+    background: radial-gradient($silver 12%, darken($silver, 45%) 80%);
+
+    &__display {
+        width: 90%;
+        height: 85%;
+        position: relative;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        border: 2px solid $silver;
+        border-radius: $radius * .8;
+        background-color: $black;
+    }
+
+    &__display--logo {
+        position: absolute;
+        width: 160px;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+    }
+
+    $touchSize: 180px;
+
+    [class*='hypersquare__display--']:not(.hypersquare__display--logo, .hypersquare__display--inner) {
+
+        width: $touchSize;
+        height: $touchSize;
+        border-radius: 50%;
+    }
+
+    [class*='__display--touch'] {
+        border: 2px solid $reg_blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $silver;
+    }
+
+    [class*='__display--item'] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:nth-child(odd) {
+            svg {
+                transform: rotate(-45deg);
+            }
+        }
+
+        svg {
+
+            width: 100%;
+        }
+    }
+
+    &__display--inner {
+        border: 2px solid $white;
+        width: $touchSize * .8;
+        height: $touchSize * .8;
+        border-radius: 50%;
+        background-color: $black;
+    }
+}

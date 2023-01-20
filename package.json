@@ -1,0 +1,15 @@
+{
+  "name": "peugeot_steer_by_wire",
+  "version": "1.0.0",
+  "description": "perform steer by wire",
+  "main": "assets/js/index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=compressed assets/scss:assets/css",
+    "prod": "cross-env NODE_ENV=prod gulp && sass --no-source-map --style=compressed assets/scss:assets/css"
+  },
+  "author": "Stephan Petersen",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}

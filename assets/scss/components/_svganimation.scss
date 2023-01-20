@@ -1,0 +1,41 @@
+@use './colors' as *;
+
+#hypersquare_svg1 {
+
+    stroke-dasharray: 4917.13916015625;
+    stroke-dashoffset: 4917.13916015625;
+    animation: slowdown 2000ms linear forwards;
+}
+
+#hypersquare_svg1.active {
+    stroke-dasharray: 4917.13916015625;
+    stroke-dashoffset: 4917.13916015625;
+    animation: fireup 2000ms linear forwards;
+
+}
+
+@keyframes fireup {
+    from {
+        stroke-dashoffset: 4917.13916015625;
+        stroke: $white;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+        stroke: $reg_blue;
+    }
+
+}
+
+@keyframes slowdown {
+    from {
+        stroke-dashoffset: 0;
+        stroke: $reg_blue;
+    }
+
+    to {
+        stroke-dashoffset: 4917.13916015625;
+        stroke: $white;
+    }
+
+}
