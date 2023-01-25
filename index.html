@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <!-- canvas with position absolute -->
+    <canvas id="canvas"></canvas>
     <main class="main">
         <div class="container">
             <div class="wheel__front">
@@ -19,7 +21,7 @@
             <div class="hypersquare">
                 <div class="hypersquare__display">
                     <div class="hypersquare__display--touch1">
-                        <div class="hypersquare__display--inner"></div>
+                        <div class="hypersquare__display--inner black"></div>
                     </div>
 
                     <div class="hypersquare__display--item3"><svg width="100%"
@@ -47,13 +49,14 @@
                         </svg>
                     </div>
                     <div class="hypersquare__display--touch3">
-                        <div class="hypersquare__display--inner">steering wheel
+                        <div class="hypersquare__display--inner black"
+                            id="steering-wheel">steeringwheel
                         </div>
                     </div>
 
 
                     <div class="hypersquare__display--touch2">
-                        <div class="hypersquare__display--inner"></div>
+                        <div class="hypersquare__display--inner black"></div>
                     </div>
                     <div class="hypersquare__display--item1"><svg width="100%"
                             height="100%" viewBox="0 0 1024 1024" version="1.1"
@@ -81,7 +84,10 @@
                     </div>
 
                     <div class="hypersquare__display--touch4">
-                        <div class="hypersquare__display--inner"></div>
+                        <div class="hypersquare__display--inner gradient"
+                            id="powerUp">start<br>stop
+
+                        </div>
                     </div>
                     <div class="hypersquare__display--logo">
                         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -160,7 +166,7 @@
                 </div>
             </div>
             <div class="controls">
-                <div class="powerbutton">
+                <div class="powerbutton" id="powerBtn">
                     <div id="power-text">
                         <p>Start</p>
                     </div>
@@ -181,7 +187,9 @@
             </div>
 
         </div>
+
     </main>
+
     <script type="module" src="assets/js/main.js"></script>
 </body>
 

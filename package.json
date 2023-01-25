@@ -4,7 +4,7 @@
   "description": "perform steer by wire",
   "main": "assets/js/index.js",
   "scripts": {
-    "sass-dev": "sass --watch --update --style=compressed assets/scss:assets/css",
+    "sass:dev": "sass --watch --update --style=compressed assets/scss:assets/css",
     "prod": "cross-env NODE_ENV=prod gulp && sass --no-source-map --style=compressed assets/scss:assets/css"
   },
   "author": "Stephan Petersen",

@@ -33,8 +33,11 @@ $radius: 12rem;
         transform: translate(-50%, 50%);
     }
 
+
+
     $touchSize: 180px;
 
+    // universalselector selektiert alles was den eingegebenen Kriterien entspricht
     [class*='hypersquare__display--']:not(.hypersquare__display--logo, .hypersquare__display--inner) {
 
         width: $touchSize;
@@ -53,7 +56,15 @@ $radius: 12rem;
         &.active {
             background-color: $reg_blue;
         }
+
+
     }
+
+    // parent vom aktiven child wird gestylt
+    .hypersquare__display--touch4:has(.hypersquare__display--inner.active) {
+        background-color: $reg_blue;
+    }
+
 
     [class*='__display--item'] {
         display: flex;
@@ -77,9 +88,22 @@ $radius: 12rem;
         width: $touchSize * .8;
         height: $touchSize * .8;
         border-radius: 50%;
-        background-color: $black;
+
         display: grid;
         place-items: center;
-        color: $white;
+        color: $neongreen;
+
+        &.black {
+            background-color: $black;
+        }
+
+        &.gradient {
+            background: linear-gradient($black 50%, $tangerine 50%);
+
+            &.active {
+                background: linear-gradient($frenchBlue 50%, $black 50%);
+            }
+        }
+
     }
 }
