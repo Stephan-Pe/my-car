@@ -1,3 +1,4 @@
+import { Cockpit } from './cockpit.js';
 const button = document.querySelector('#btn-bg');
 const text = document.querySelector('#power-text');
 const svg = document.querySelector('#hypersquare_svg1');
@@ -24,7 +25,7 @@ export const Engine = {
             // changedTouches ist eine Property des Touchevent und ein Array
             // console.log(e.changedTouches);
             [...e.changedTouches].forEach(touch => {
-                console.log(touch);
+                //console.log(touch);
             });
         }
 
@@ -43,12 +44,14 @@ export const Engine = {
                     text.classList.add('active');
                     Engine.msg.innerHTML = '<p>Stop</p>';
                     svg.classList.add('active');
+                    Cockpit.init();
 
                 } else if (Engine.endTime - Engine.startTime > 350 && touch.target.closest('.powerbutton > div')) {
                     button.classList.remove('active');
                     svg.classList.remove('active');
                     text.classList.remove('active');
                     Engine.msg.innerHTML = '<p>Start</p>';
+                    window.location.reload();
 
 
                 }

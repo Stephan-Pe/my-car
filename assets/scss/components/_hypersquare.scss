@@ -3,7 +3,7 @@
 $radius: 12rem;
 
 .hypersquare {
-    width: 1000px;
+    width: 900px;
     height: 600px;
     margin: auto;
     border-radius: $radius;
@@ -27,7 +27,7 @@ $radius: 12rem;
 
     &__display--logo {
         position: absolute;
-        width: 160px;
+        width: 140px;
         left: 50%;
         bottom: 50%;
         transform: translate(-50%, 50%);
@@ -35,7 +35,7 @@ $radius: 12rem;
 
 
 
-    $touchSize: 180px;
+    $touchSize: 140px;
 
     // universalselector selektiert alles was den eingegebenen Kriterien entspricht
     [class*='hypersquare__display--']:not(.hypersquare__display--logo, .hypersquare__display--inner) {
@@ -54,7 +54,7 @@ $radius: 12rem;
         background-color: $silver;
 
         &.active {
-            background-color: $reg_blue;
+            background-color: $neongreen;
         }
 
 
@@ -62,7 +62,7 @@ $radius: 12rem;
 
     // parent vom aktiven child wird gestylt
     .hypersquare__display--touch4:has(.hypersquare__display--inner.active) {
-        background-color: $reg_blue;
+        background-color: $neongreen;
     }
 
 
@@ -103,6 +103,14 @@ $radius: 12rem;
             &.active {
                 background: linear-gradient($frenchBlue 50%, $black 50%);
             }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
         }
 
     }

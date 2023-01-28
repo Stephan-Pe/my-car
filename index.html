@@ -10,10 +10,11 @@
 </head>
 
 <body>
-    <!-- canvas with position absolute -->
-    <canvas id="canvas"></canvas>
+
     <main class="main">
         <div class="container">
+            <!-- canvas with position absolute -->
+            <canvas id="canvas"></canvas>
             <div class="wheel__front">
                 <div class="wheel__front--left"></div>
                 <div class="wheel__front--right"></div>
@@ -52,8 +53,8 @@
                         <div class="hypersquare__display--inner black"
                             id="steering-wheel">steeringwheel
                         </div>
-                    </div>
 
+                    </div>
 
                     <div class="hypersquare__display--touch2">
                         <div class="hypersquare__display--inner black"></div>
@@ -85,7 +86,9 @@
 
                     <div class="hypersquare__display--touch4">
                         <div class="hypersquare__display--inner gradient"
-                            id="powerUp">start<br>stop
+                            id="powerUp">
+                            <div id="top"> speed</div>
+                            <div id="bottom">stop</div>
 
                         </div>
                     </div>
@@ -165,6 +168,11 @@
                     </div>
                 </div>
             </div>
+
+            <div class="wheel__back">
+                <div class="wheel__back--left"></div>
+                <div class="wheel__back--right"></div>
+            </div>
             <div class="controls">
                 <div class="powerbutton" id="powerBtn">
                     <div id="power-text">
@@ -181,11 +189,6 @@
                 </div>
                 <small>Press long to Stop</small>
             </div>
-            <div class="wheel__back">
-                <div class="wheel__back--left"></div>
-                <div class="wheel__back--right"></div>
-            </div>
-
         </div>
 
     </main>

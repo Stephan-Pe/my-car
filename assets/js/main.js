@@ -1,6 +1,5 @@
-import { Cockpit } from './modules/cockpit.js';
 import { Engine } from './modules/engine.js';
-import { init, animate } from './modules/canvas.js';
+import { init, animate, stopInit } from './modules/canvas.js';
 const powerUp = document.querySelector('.hypersquare__display');
 const startRoadRunner = document.getElementById('powerUp');
 
@@ -11,18 +10,18 @@ const startRoadRunner = document.getElementById('powerUp');
 // var length = path.getTotalLength();
 // console.log(length);
 
-let onLongTouch;
+let callBack;
 let timer;
-let touchDuration = 500;
+let duration = 3000;
 function runStreet() {
-    timer = setInterval(onLongTouch, touchDuration);
+    timer = setInterval(callBack, duration);
 
 }
 function stopStreet() {
     if (timer)
         clearInterval(timer);
 }
-onLongTouch = function () {
+callBack = function () {
     init(),
         animate()
 
@@ -35,15 +34,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
         if (e.target.closest('#powerUp')) {
 
             [...e.changedTouches].forEach(touch => {
-                if (touch.clientY < 660) {
+                if (touch.target.closest('#top')) {
                     startRoadRunner.classList.add('active');
                     runStreet();
-                    //console.log('smaller' + touch.clientY);
+
                 }
-                else if (touch.clientY > 660) {
+                else if (touch.target.closest('#bottom')) {
                     startRoadRunner.classList.remove('active');
                     stopStreet();
-                    //console.log('bigger' + touch.clientY);
+                    stopInit();
+
                 }
             });
 
@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     })
 
     Engine.init();
-    Cockpit.init();
+
 });
 
 

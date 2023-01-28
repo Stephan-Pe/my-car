@@ -1,14 +1,10 @@
 export const Cockpit = {
 
     currentPosition: 0,
-    lastKnownPosition: 0,
     steerControlBottom: 411,
     wheelAngleFront: 0,
     wheelAngleBack: 0,
     angleBase: 0,
-    startTime: 0,
-    endTime: 0,
-
     frontWheels: document.querySelectorAll("[class*='wheel__front--']"),
     backWheels: document.querySelectorAll("[class*='wheel__back--']"),
     steerControl: document.querySelector(".hypersquare__display--touch3"),
@@ -34,7 +30,6 @@ export const Cockpit = {
                 dot.style.left = `${touch.pageX}px`
                 dot.id = touch.identifier
                 document.body.appendChild(dot)
-                Cockpit.currentPosition = sessionStorage.setItem('currentPosition', touch.clientY)
 
             });
         }
@@ -79,8 +74,11 @@ export const Cockpit = {
                     Cockpit.angleBase = Cockpit.steerControlBottom - Cockpit.currentPosition;
                     Cockpit.wheelAngleFront = Math.abs(Cockpit.angleBase) / 6.5;
                     Cockpit.wheelAngleBack = Math.abs(Cockpit.angleBase) / 32;
+                    console.log(touch.clientY);
                     [...Cockpit.frontWheels].forEach(wheel => {
                         if (Cockpit.currentPosition <= 411) {
+                            // nach offiziellen Quellen lenkt eine vierradlenkung vorne bis 27 grad und hinten bis max 5 grad einschlag
+
                             wheel.style.transform = `rotateZ(${Cockpit.wheelAngleFront}deg)`;
                         } else if (Cockpit.currentPosition >= 411) {
                             wheel.style.transform = `rotateZ(-${Cockpit.wheelAngleFront}deg)`;
